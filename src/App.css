@@ -2,37 +2,134 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(8px + 1vmin);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.App-header.am{
+  background-color: #33708b;
+}
+.App-header.pm{
+  background-color: #1d2129;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.box{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .5s;
+}
+.box-inner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.num{
+  position: absolute;
+  right: 0;
+  top: 0rem;
+  text-align: right;
+  line-height: 2rem;
+  opacity: .5;
+  transition: all .5s;
+  overflow: hidden;
+}
+.num.active{
+  opacity: 1;
+  font-size: calc(12px + 1vmin);
+  overflow: visible;
+}
+.hour.active:after{
+  content:':';
+  position: absolute;
+  right: -18.65%;
+  top: 0rem;
+}
+.minute.active:after{
+  content:':';
+  position: absolute;
+  right: -9.65%;
+  top: 0rem;
+}
+
+.ampm{
+  position: absolute;
+  left: 67%;
+  font-size: 2rem;
+  transform: translateY(50%, 50%);
+}
+
+.hour{
+  width: 10%;
+  top: 50%;
+  left: 50%;
+}
+.minute{
+  width: 20%;
+  top: 50%;
+  left: 50%;
+}
+.second{
+  width: 30%;
+  top: 50%;
+  left: 50%;
+}
+
+
+.earth {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  max-width: 125px;
+  height: auto;
+  min-height: 125px;
+  color: #000;
+  border-radius: 50%;
+  background: url(images/earthmap.jpg) 0 0 repeat / 300px;
+  box-shadow: inset 10px 0 30px 4px rgba(0, 0, 0, 1);
+  transform-style: preserve-3d;
+}
+
+.earth:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  border-radius: 50%;
+  box-shadow: -30px 5px 30px 5px rgba(0,0,0,.6) inset;
+}
+
+.earth:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  opacity: .2;
+  border-radius: 50%;
+  background: radial-gradient(circle at 125px 125px, #fff, #000);
+}
+
+@keyframes rotate {
+  0% {background-position: 0 0;}
+  100% {background-position: 630px 0;}
 }
