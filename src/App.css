@@ -39,7 +39,7 @@
   justify-content: center;
   align-items: center;
 }
-.num{
+.item{
   position: absolute;
   right: 0;
   top: 0rem;
@@ -49,7 +49,7 @@
   transition: all .5s;
   overflow: hidden;
 }
-.num.active{
+.item.active{
   opacity: 1;
   font-size: calc(12px + 1vmin);
   overflow: visible;
